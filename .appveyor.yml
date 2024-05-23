@@ -1,5 +1,3 @@
-image: Ubuntu1804  # образ для сборки
-
 stack: node 18  # окружение
 
 branches:
