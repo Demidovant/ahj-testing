@@ -16,17 +16,3 @@ build_script:
 
 test_script:
   - npm run lint
-
-deploy:
-  provider: GitHub
-  auth_token:
-    secure: p79ubl/WjoRQe/rxFspdFcY4ub1VEEeyZ3YRi1DKSYRQu51FBI5yXrxz84NZdO2Y
-
-environment:
-  GIT_TOKEN: secure: p79ubl/WjoRQe/rxFspdFcY4ub1VEEeyZ3YRi1DKSYRQu51FBI5yXrxz84NZdO2Y
-
-deploy_script:  # скрипт развёртывания
-  - git config --global credential.helper store
-  - git config --global user.name Anton Demidov
-  - git config --global user.email anton_demidov@list.ru
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
