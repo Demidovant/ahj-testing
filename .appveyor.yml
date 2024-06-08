@@ -19,4 +19,4 @@ test_script:
 
 deploy:
   provider: GitHub
-  auth_token: ${{ secrets.APPVEYOR_TOKEN }}
+  secure: p79ubl/WjoRQe/rxFspdFcY4ub1VEEeyZ3YRi1DKSYRQu51FBI5yXrxz84NZdO2Y
