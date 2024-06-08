@@ -21,3 +21,9 @@ deploy:
   provider: GitHub
   auth_token:
     secure: p79ubl/WjoRQe/rxFspdFcY4ub1VEEeyZ3YRi1DKSYRQu51FBI5yXrxz84NZdO2Y
+
+deploy_script:  # скрипт развёртывания
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - npm push-dir --dir=dist --branch=gh-pages --force --verbose
