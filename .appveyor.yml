@@ -10,7 +10,7 @@ install:
   - npm install  # команда установки зависимостей
 
 build:
-  - webpack --config webpack.prod.js  # off - отключаем встроенную в appveyor систему сборки
+  - command: npm install && npm run build  # off - отключаем встроенную в appveyor систему сборки
 
 build_script:
   - npm run build   # команда сборки
