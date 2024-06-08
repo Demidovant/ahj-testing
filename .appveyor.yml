@@ -26,4 +26,4 @@ deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
-  - npm push-dir --dir=dist --branch=gh-pages --force --verbose
+  - push-dir --dir=dist --branch=gh-pages --force --verbose
