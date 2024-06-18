@@ -23,7 +23,9 @@ test_script:
 #  matrix:
 #    - GITHUB_TOKEN: { secure: p79ubl/WjoRQe/rxFspdFcY4ub1VEEeyZ3YRi1DKSYRQu51FBI5yXrxz84NZdO2Y }
     
-deploy_script:
+deploy_script:  # Script for deployment
+  - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose --token=%GITHUB_TOKEN%
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
